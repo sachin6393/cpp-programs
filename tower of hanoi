@@ -1,0 +1,23 @@
+#include<stdio.h>
+void to_0f_hanoi(int n,char fromrod,char midrod,char torod)
+{
+    if(n==1)
+    {
+        printf("move disk 1 from rod %c to %c\n",fromrod,torod);
+    }
+    else
+{
+
+    to_0f_hanoi(n-1,fromrod,torod,midrod);
+    printf("move disk %d from rod %c to %c\n",n,fromrod,torod);
+    to_0f_hanoi(n-1,midrod,fromrod,torod);
+}
+}
+int main()
+{
+    int n;
+    printf("enter the no of disks\n ");
+    scanf("%d",&n);
+    to_0f_hanoi(n,'A','B','C');
+    return 0;
+}
